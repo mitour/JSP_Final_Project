@@ -39,14 +39,23 @@
         </div>
         <div class="row">
             <div class="col-sm-10 col-sm-offset-1 text-center">
-                <form name="sentMessage" id="contactForm" novalidate>
+                <form action="signup_to_db.jsp"
+                      method="post"
+                      name="sentMessage"
+                      id="contactForm"
+                      novalidate>
                     <div class="row">
                         <div class="form-group row">
                             <div class="col-sm-2">
                                 <label for="name">姓名</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" placeholder="姓名 *" id="name" required
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="姓名 *"
+                                       id="name"
+                                       name="name"
+                                       required
                                        data-validation-required-message="請輸入您的姓名">
 
                                 <p class="help-block text-danger"></p>
@@ -57,7 +66,12 @@
                                 <label for="email">信箱</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" placeholder="信箱 *" id="email" required
+                                <input type="email"
+                                       class="form-control"
+                                       placeholder="信箱 *"
+                                       id="email"
+                                       name="email"
+                                       required
                                        data-validation-required-message="請輸入您的信箱">
 
                                 <p class="help-block text-danger"></p>
@@ -86,13 +100,13 @@
                             <div class="col-sm-10">
                                 <input type="password"
                                        class="form-control"
-                                       placeholder="密碼 *"
+                                       placeholder="再次輸入密碼 *"
                                        id="repassword"
                                        name="repassword"
                                        required
-                                       data-validation-required-message="請設定您的密碼"
+                                       data-validation-required-message="請再次輸入您的密碼"
                                        data-validation-matches-match="password"
-                                       data-validation-matches-message="03">
+                                       data-validation-matches-message="兩次密碼需相同。">
 
                                 <p class="help-block text-danger"></p>
                             </div>
@@ -104,13 +118,23 @@
                             <div class="col-sm-10 row">
                                 <div class="col-sm-6">
                                     <label for="male">男性</label>
-                                    <input type="radio" class="form-control" id="male" name="gender" required
-                                           data-validation-required-message="請選擇您的性別" value="male">
+                                    <input type="radio"
+                                           class="form-control"
+                                           id="male"
+                                           name="gender"
+                                           required
+                                           data-validation-required-message="請選擇您的性別"
+                                           value="male">
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="female">女性</label>
-                                    <input type="radio" class="form-control" id="female" name="gender" required
-                                           data-validation-required-message="請選擇您的性別" value="female">
+                                    <input type="radio"
+                                           class="form-control"
+                                           id="female"
+                                           name="gender"
+                                           required
+                                           data-validation-required-message="請選擇您的性別"
+                                           value="female">
                                 </div>
                                 <p class="help-block text-danger"></p>
                             </div>
@@ -120,7 +144,12 @@
                                 <label for="birthday">生日</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" placeholder="生日 *" id="birthday" required
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="生日 *"
+                                       id="birthday"
+                                       name="birthday"
+                                       required
                                        data-validation-required-message="請輸入您的生日">
 
                                 <p class="help-block text-danger"></p>
@@ -135,6 +164,7 @@
                                        class="form-control"
                                        placeholder="電話 *"
                                        id="phone"
+                                       name="phone"
                                        required
                                        data-validation-required-message="請輸入您的電話"
                                        pattern="[09]{2}[0-9]{8}"
@@ -148,7 +178,12 @@
                                 <label for="address">住址</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" placeholder="住址 *" id="address" required
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="住址 *"
+                                       id="address"
+                                       name="address"
+                                       required
                                        data-validation-required-message="請輸入您的住址">
 
                                 <p class="help-block text-danger"></p>
@@ -182,7 +217,10 @@
 
 <!-- Contact Form JavaScript -->
 <script src="js/jqBootstrapValidation.js"></script>
-<script src="js/contact_me.js"></script>
+<script>
+    $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+</script>
+<%--<script src="js/contact_me.js"></script>--%>
 
 <!-- Custom Theme JavaScript -->
 <script src="js/agency.js"></script>
