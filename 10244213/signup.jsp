@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Sign Up</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -46,10 +46,10 @@
                       novalidate>
                     <div class="row">
                         <div class="form-group row">
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <label for="name">姓名</label>
                             </div>
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
                                 <input type="text"
                                        class="form-control"
                                        placeholder="姓名 *"
@@ -62,10 +62,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <label for="email">信箱</label>
                             </div>
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
                                 <input type="email"
                                        class="form-control"
                                        placeholder="信箱 *"
@@ -78,10 +78,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <label for="password">密碼</label>
                             </div>
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
                                 <input type="password"
                                        class="form-control"
                                        placeholder="密碼 *"
@@ -94,10 +94,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <label for="password">再次輸入密碼</label>
                             </div>
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
                                 <input type="password"
                                        class="form-control"
                                        placeholder="再次輸入密碼 *"
@@ -112,10 +112,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <label>性別</label>
                             </div>
-                            <div class="col-sm-10 row">
+                            <div class="col-sm-9">
                                 <div class="col-sm-6">
                                     <label for="male">男性</label>
                                     <input type="radio"
@@ -140,13 +140,13 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <label for="birthday">生日</label>
                             </div>
-                            <div class="col-sm-10">
-                                <input type="text"
+                            <div class="col-sm-9">
+                                <input type="date"
                                        class="form-control"
-                                       placeholder="生日 *"
+                                       placeholder="yyyy-mm-dd *"
                                        id="birthday"
                                        name="birthday"
                                        required
@@ -156,13 +156,13 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-sm-2">
-                                <label for="phone">電話</label>
+                            <div class="col-sm-3">
+                                <label for="phone">手機</label>
                             </div>
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
                                 <input type="tel"
                                        class="form-control"
-                                       placeholder="電話 *"
+                                       placeholder="手機 *"
                                        id="phone"
                                        name="phone"
                                        required
@@ -174,10 +174,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <label for="address">住址</label>
                             </div>
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
                                 <input type="text"
                                        class="form-control"
                                        placeholder="住址 *"
@@ -190,7 +190,7 @@
                             </div>
                         </div>
                         <div class="col-lg-10 col-lg-offset-1 text-center row">
-                            <div class="col-sm-3 col-sm-offset-2 text-center">
+                            <div class="col-sm-3 col-sm-offset-3 text-center">
                                 <button type="submit" class="btn btn-xl">提交</button>
                             </div>
                             <div class="col-sm-3 col-sm-offset-2 text-center">

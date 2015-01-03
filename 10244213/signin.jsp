@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Sign In</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -38,27 +38,44 @@
             </div>
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1 text-center">
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    <form action="signin_to_db.jsp"
+                          method="post"
+                          name="sentMessage"
+                          id="contactForm"
+                          novalidate>
                         <div class="row">
                             <div class="form-group row">
-                                <div class="col-sm-2">
+                                <div class="col-sm-3">
                                     <label for="email">信箱</label>
                                 </div>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" placeholder="信箱 *" id="email" required>
+                                <div class="col-sm-9">
+                                    <input type="email"
+                                           class="form-control"
+                                           placeholder="信箱 *"
+                                           id="email"
+                                           name="email"
+                                           required
+                                           data-validation-required-message="請輸入您的信箱">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-2">
+                                <div class="col-sm-3">
                                     <label for="password">密碼</label>
                                 </div>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" placeholder="密碼 *" id="password" required>
+                                <div class="col-sm-9">
+                                    <input type="password"
+                                           class="form-control"
+                                           placeholder="密碼 *"
+                                           id="password"
+                                           name="password"
+                                           required
+                                           data-validation-required-message="請設定您的密碼">
+                                    <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-lg-10 col-lg-offset-1 text-center row">
-                                <div class="col-sm-3 col-sm-offset-2 text-center">
+                                <div class="col-sm-3 col-sm-offset-3 text-center">
                                     <button type="submit" class="btn btn-xl">提交</button>
                                 </div>
                                 <div class="col-sm-3 col-sm-offset-2 text-center">
@@ -85,7 +102,10 @@
 
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script>
+        $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+    </script>
+    <%--<script src="js/contact_me.js"></script>--%>
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
