@@ -60,7 +60,7 @@
                             out.println("</script>");
 
                             session.setAttribute("user",select_rs.getString("member_name"));
-                            response.sendRedirect("index.jsp");
+                            out.println("window.history.back()");
                         } else {
                             out.println("<script>");
                             out.println("alert(\"信箱或密碼不符。\");");

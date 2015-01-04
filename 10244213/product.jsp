@@ -58,18 +58,12 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#services">服務</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#portfolio">產品</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#team">關於我們</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="mailto:love2082020@gmail.com">聯絡我們</a>
+                    <a class="page-scroll" href="shopping_cart">購物車</a>
                 </li>
                 <%@include file="validation_member_signout.jsp"%>
+                <li>
+                    <a class="page-scroll" href="index.jsp">回首頁</a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -79,62 +73,64 @@
 
 <!-- Header -->
 <header>
-    <div class="container">
-        <div class="intro-text">
-            <div class="intro-lead-in">Welcome To Our Studio!</div>
-            <div class="intro-heading">It's Nice To Meet You</div>
-            <a href="#services" class="page-scroll btn btn-xl">了解詳請</a>
-        </div>
-    </div>
+    <%--<div class="intro-text">--%>
+        <%--<div class="intro-lead-in">Welcome To Our Studio!</div>--%>
+        <%--<div class="intro-heading">It's Nice To Meet You</div>--%>
+        <%--<a href="#services" class="page-scroll btn btn-xl">了解詳請</a>--%>
+    <%--</div>--%>
 </header>
 
-<!-- Services Section -->
-<section id="services">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">服務</h2>
-                <h3 class="section-subheading text-muted">橘。花台給你最優質的服務！</h3>
+<div class="header row">
+    <div class="col-xs-10 col-xs-offset-1">
+        <div class="col-md-8">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img class="img-responsive" src="img/portfolio/tangerine1.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="img-responsive" src="img/portfolio/tangerine2.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="img-responsive" src="img/portfolio/tangerine3.jpg" alt="">
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
             </div>
         </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                <h4 class="service-heading">線上購物</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-            <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                <h4 class="service-heading">保證3天內出貨</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
-            <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                <h4 class="service-heading">7天內全額退費</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
+
+        <div class="col-md-4">
+            <h3>Project Description</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+            <h3>Project Details</h3>
+            <ul>
+                <li>Lorem Ipsum</li>
+                <li>Dolor Sit Amet</li>
+                <li>Consectetur</li>
+                <li>Adipiscing Elit</li>
+            </ul>
         </div>
     </div>
-</section>
+</div>
 
 <!-- Portfolio Grid Section -->
 <section id="portfolio" class="bg-light-gray">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">推薦商品</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            </div>
-        </div>
         <div class="row">
             <div class="col-md-4 col-sm-6 portfolio-item">
                 <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
@@ -219,43 +215,6 @@
                     <h4>Dreams</h4>
                     <p class="text-muted">Website Design</p>
                 </div>
-            </div>
-            <div class = "text-center">
-                <button type = "button"
-                        onclick = "document.location.href='product.jsp'"
-                        class = "btn btn-xl">看不夠嗎？</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Team Section -->
-<section id="team" class="bg-light-gray">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">關於我們</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="team-member">
-                    <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
-                    <h4>Kay Garland</h4>
-                    <p class="text-muted">Lead Designer</p>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="team-member">
-                    <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
-                    <h4>Larry Parker</h4>
-                    <p class="text-muted">Lead Marketer</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
             </div>
         </div>
     </div>

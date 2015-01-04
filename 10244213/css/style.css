@@ -1,6 +1,9 @@
+body {
+	font-size: 20px;
+}
+
 label {
 	color: #fed136;
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 30px;
 	font-weight: 700;
 	line-height: 44px;
@@ -9,4 +12,20 @@ label {
 section h2.section-heading {
 	margin-bottom: 1.5em;
 	font-size: 50px;
+}
+
+li {
+	list-style-type: none;
+}
+
+.form-control {
+	font-size: 18px;
+}
+
+.text-danger {
+	text-align: left;
+}
+
+.header {
+	padding-top: 100px;
 }

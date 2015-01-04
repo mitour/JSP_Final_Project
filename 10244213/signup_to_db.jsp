@@ -114,6 +114,8 @@
                             if (!checkupdate) {
                                 out.println("<script>");
                                 out.println("console.log(\"新增資料成功。\");");
+                                out.println("alert(\"註冊成功，請至首頁登入！\");");
+                                out.println("document.location.href=\"index.jsp\";");
                                 out.println("</script>");
                             } else {
                                 out.println("<script>");
