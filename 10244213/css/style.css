@@ -27,5 +27,47 @@ li {
 }
 
 .header {
-	padding-top: 100px;
+	padding: 120px 0 20px 0;
+}
+
+.portfolio-caption .btn-xl {
+	padding: 6px 12px;
+	font-size: 16px;
+}
+
+.btn_smail {
+	padding: 6px 12px;
+	font-size: 16px;
+}
+
+#portfolio .portfolio-item .portfolio-caption p  {
+	font-style: normal;
+	font-size: 26px;
+	padding-bottom: 1.5em;
+}
+
+.product_page {
+	background-color: #000000;
+}
+
+.panel-title {
+	font-size: 26px;
+}
+
+.table {
+	display: table;
+}
+
+.th,
+.tr {
+	display: table-row;
+}
+
+.td {
+	display: table-cell;
+}
+
+.header .container {
+	padding-left: 0;
+	padding-right: 0;
 }

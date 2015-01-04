@@ -36,8 +36,9 @@
 </head>
 
 <body id="page-top" class="index">
+
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top product_page">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -57,8 +58,28 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
+                <%--<li>--%>
+                    <%--<a class="page-scroll dropdown" href="#categories" aria-expanded="true">分類</a>--%>
+                    <%--<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">--%>
+                        <%--<li role="presentation">--%>
+                            <%--<a role="menuitem" tabindex="-1" href="">紐西蘭來的橘子</a>--%>
+                        <%--</li>--%>
+                        <%--<li role="presentation">--%>
+                            <%--<a role="menuitem" tabindex="-1" href="">美國來的橘子</a>--%>
+                        <%--</li>--%>
+                        <%--<li role="presentation">--%>
+                            <%--<a role="menuitem" tabindex="-1" href="">加拿大來的橘子</a>--%>
+                        <%--</li>--%>
+                        <%--<li role="presentation">--%>
+                            <%--<a role="menuitem" tabindex="-1" href="">台灣本土的橘子</a>--%>
+                        <%--</li>--%>
+                        <%--<li role="presentation">--%>
+                            <%--<a role="menuitem" tabindex="-1" href="">日本來的橘子</a>--%>
+                        <%--</li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
                 <li>
-                    <a class="page-scroll" href="shopping_cart">購物車</a>
+                    <a class="page-scroll" href="shopping_cart.jsp">購物車</a>
                 </li>
                 <%@include file="validation_member_signout.jsp"%>
                 <li>
@@ -70,15 +91,6 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
-
-<!-- Header -->
-<header>
-    <%--<div class="intro-text">--%>
-        <%--<div class="intro-lead-in">Welcome To Our Studio!</div>--%>
-        <%--<div class="intro-heading">It's Nice To Meet You</div>--%>
-        <%--<a href="#services" class="page-scroll btn btn-xl">了解詳請</a>--%>
-    <%--</div>--%>
-</header>
 
 <div class="header row">
     <div class="col-xs-10 col-xs-offset-1">
@@ -133,7 +145,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-6 portfolio-item">
-                <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                <a href="" class="portfolio-link" data-toggle="modal">
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content">
                             <i class="fa fa-plus fa-3x"></i>
@@ -141,9 +153,12 @@
                     </div>
                     <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
                 </a>
-                <div class="portfolio-caption">
-                    <h4>Round Icons</h4>
-                    <p class="text-muted">Graphic Design</p>
+                <div class="portfolio-caption row">
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <h2>Product #1</h2>
+                        <p class="text-muted">Graphic Design</p>
+                        <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -155,9 +170,12 @@
                     </div>
                     <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
                 </a>
-                <div class="portfolio-caption">
-                    <h4>Startup Framework</h4>
-                    <p class="text-muted">Website Design</p>
+                <div class="portfolio-caption row">
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <h2>Product #1</h2>
+                        <p class="text-muted">Graphic Design</p>
+                        <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -169,9 +187,12 @@
                     </div>
                     <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
                 </a>
-                <div class="portfolio-caption">
-                    <h4>Treehouse</h4>
-                    <p class="text-muted">Website Design</p>
+                <div class="portfolio-caption row">
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <h2>Product #1</h2>
+                        <p class="text-muted">Graphic Design</p>
+                        <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -183,9 +204,12 @@
                     </div>
                     <img src="img/portfolio/golden.png" class="img-responsive" alt="">
                 </a>
-                <div class="portfolio-caption">
-                    <h4>Golden</h4>
-                    <p class="text-muted">Website Design</p>
+                <div class="portfolio-caption row">
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <h2>Product #1</h2>
+                        <p class="text-muted">Graphic Design</p>
+                        <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -197,9 +221,12 @@
                     </div>
                     <img src="img/portfolio/escape.png" class="img-responsive" alt="">
                 </a>
-                <div class="portfolio-caption">
-                    <h4>Escape</h4>
-                    <p class="text-muted">Website Design</p>
+                <div class="portfolio-caption row">
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <h2>Product #1</h2>
+                        <p class="text-muted">Graphic Design</p>
+                        <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -211,9 +238,12 @@
                     </div>
                     <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
                 </a>
-                <div class="portfolio-caption">
-                    <h4>Dreams</h4>
-                    <p class="text-muted">Website Design</p>
+                <div class="portfolio-caption row">
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <h2>Product #1</h2>
+                        <p class="text-muted">Graphic Design</p>
+                        <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                    </div>
                 </div>
             </div>
         </div>
