@@ -17,6 +17,7 @@
         String birthday = request.getParameter("birthday");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
+        int check_email = 0;
 
         /*
          * 載入 JDBC 驅動程式，若找不到 .jar 檔，導入例外事件。
@@ -84,7 +85,7 @@
                                 out.println("alert(\"您輸入的信箱已被申請過。\");");
                                 out.println("window.history.back()");
                                 out.println("</script>");
-                                con.close();
+                                check_email ++;
                             }
                         }
                         /*
@@ -92,41 +93,43 @@
                          * Step1. Insert 會員資料至 database。
                          *        Using PreparedStatement()
                          */
-                        String insert_sql = "INSERT member(member_name, email, password, gender, birthday, phone, address) VALUES(?, ?, ?, ?, ?, ?, ?)";
-                        PreparedStatement insert_prestate = con.prepareStatement(insert_sql);
-                        insert_prestate.setString(1, name);
-                        insert_prestate.setString(2, email);
-                        insert_prestate.setString(3, password);
-                        insert_prestate.setString(4, gender);
-                        insert_prestate.setString(5, birthday);
-                        insert_prestate.setString(6, phone);
-                        insert_prestate.setString(7, address);
+                        if (check_email == 0 ) {
+                            String insert_sql = "INSERT member(member_name, email, password, gender, birthday, phone, address) VALUES(?, ?, ?, ?, ?, ?, ?)";
+                            PreparedStatement insert_prestate = con.prepareStatement(insert_sql);
+                            insert_prestate.setString(1, name);
+                            insert_prestate.setString(2, email);
+                            insert_prestate.setString(3, password);
+                            insert_prestate.setString(4, gender);
+                            insert_prestate.setString(5, birthday);
+                            insert_prestate.setString(6, phone);
+                            insert_prestate.setString(7, address);
 
-                        /*
-                         * 新增會員註冊資料至資料庫：
-                         * Step2. 確認 Insert 是否成功。
-                         *        為求 return 值為 true or false 以方便辨認新增成功或失敗，
-                         *        暫用 execute() 而非 executeUpdate()。
-                         */
-                        try {
-                            boolean checkupdate = insert_prestate.execute();    //執行新增
+                            /*
+                             * 新增會員註冊資料至資料庫：
+                             * Step2. 確認 Insert 是否成功。
+                             *        為求 return 值為 true or false 以方便辨認新增成功或失敗，
+                             *        暫用 execute() 而非 executeUpdate()。
+                             */
+                            try {
+                                boolean checkupdate = insert_prestate.execute();    //執行新增
 
-                            if (!checkupdate) {
+                                if (!checkupdate) {
+                                    out.println("<script>");
+                                    out.println("console.log(\"新增資料成功。\");");
+                                    out.println("alert(\"註冊成功，請至首頁登入！\");");
+                                    out.println("document.location.href=\"index.jsp\";");
+                                    out.println("</script>");
+                                } else {
+                                    out.println("<script>");
+                                    out.println("console.log(\"新增資料失敗。\");");
+                                    out.println("</script>");
+                                }
+                            } catch (SQLException sExec) {
                                 out.println("<script>");
-                                out.println("console.log(\"新增資料成功。\");");
-                                out.println("alert(\"註冊成功，請至首頁登入！\");");
-                                out.println("document.location.href=\"index.jsp\";");
-                                out.println("</script>");
-                            } else {
-                                out.println("<script>");
-                                out.println("console.log(\"新增資料失敗。\");");
+                                out.println("console.log(\"新增時SQL錯誤!" + sExec.toString() + "\");");
+                                out.println(insert_prestate);
                                 out.println("</script>");
                             }
-                        } catch (SQLException sExec) {
-                            out.println("<script>");
-                            out.println("console.log(\"新增時SQL錯誤!" + sExec.toString() + "\");");
-                            out.println(insert_prestate);
-                            out.println("</script>");
                         }
                     } else {
                         out.println("<script>");

@@ -105,7 +105,7 @@
                             <span class="glyphicon glyphicon-chevron-left"></span>
                             繼續選購
                         </a>
-                        <a class="btn btn-xl btn_smail" href="">
+                        <a class="btn btn-xl btn_smail" href="check_out.jsp">
                             前往結帳
                             <span class="glyphicon glyphicon-chevron-right"></span>
                         </a>
@@ -125,70 +125,50 @@
             </div>
             <div class="panel-body">
                 <div class="col-md-3 col-sm-6 portfolio-item">
-                    <a href="" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption row">
-                        <div class="col-xs-10 col-xs-offset-1">
+                    <div class="portfolio_hover">
+                        <a href="product_details.jsp" class="portfolio_hover_img">
+                            <img src="img/portfolio/treehouse-preview.png" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption row">
                             <h3>Product #1</h3>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl btn_smail">選購</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption row">
-                        <div class="col-xs-10 col-xs-offset-1">
-                            <h3>Product #1</h3>
+                    <div class="portfolio_hover">
+                        <a href="product_details.jsp" class="portfolio_hover_img">
+                            <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption row">
+                            <h3>Product #2</h3>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl btn_smail">選購</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption row">
-                        <div class="col-xs-10 col-xs-offset-1">
-                            <h3>Product #1</h3>
+                    <div class="portfolio_hover">
+                        <a href="product_details.jsp" class="portfolio_hover_img">
+                            <img src="img/portfolio/golden.png" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption row">
+                            <h3>Product #3</h3>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl btn_smail">選購</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption row">
-                        <div class="col-xs-10 col-xs-offset-1">
-                            <h3>Product #1</h3>
+                    <div class="portfolio_hover">
+                        <a href="product_details.jsp" class="portfolio_hover_img">
+                            <img src="img/portfolio/escape.png" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption row">
+                            <h3>Product #4</h3>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl btn_smail">選購</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
                         </div>
                     </div>
                 </div>

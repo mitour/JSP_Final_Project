@@ -30,9 +30,32 @@ li {
 	padding: 120px 0 20px 0;
 }
 
+#signup,
+#signin {
+	min-height: 100vh;
+	margin-bottom: 50px;
+}
+
+.sign_up .header,
+.sign_in .header {
+	padding: 200px 0 20px 0;
+}
+
+.sign_up,
+.sign_in {
+	background-color: #222;
+	background-image: url(../img/map-image.png);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+footer {
+	background: #ffffff;
+}
+
 .portfolio-caption .btn-xl {
 	padding: 6px 12px;
-	font-size: 16px;
+	font-size: 20px;
 }
 
 .btn_smail {
@@ -70,4 +93,57 @@ li {
 .header .container {
 	padding-left: 0;
 	padding-right: 0;
+}
+
+.portfolio_hover:hover .portfolio_hover_img img {
+	background: rgba(254,209,54,.9);
+	opacity: 0.5;
+}
+
+.panel .panel-title a {
+	text-decoration: none;
+}
+
+.product_img,
+.product_info {
+	padding: 5px;
+}
+
+.product_img img {
+	max-width: 100%;
+	border-radius: 5px;
+}
+
+.product_info,
+.product_btn {
+	margin: 20px;
+}
+
+.product_note {
+	margin: 10px;
+	font-style: italic;
+	font-size: 20px;
+	color: #5e5e5e;
+}
+
+.breadcrumb {
+	padding: 0;
+	margin: 0;
+}
+
+.portfolio-caption h3 {
+	padding-top: 0;
+	padding-bottom: 0;
+	padding: 15px 0;
+}
+
+.panel-body label {
+	color: #000;
+	font-size: 20px;
+}
+
+.panel-body .form-group,
+.panel-body label {
+	margin-bottom: 0;
+	margin-left: 2em;
 }

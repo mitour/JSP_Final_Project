@@ -27,9 +27,37 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index sign_in">
 
-    <section id="signup">
+    <nav class="navbar navbar-default navbar-fixed-top product_page">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.jsp">橘。花台</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <%@include file="validation_memder_name.jsp"%>
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <%@include file="validation_member_signout.jsp"%>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section id="signin" class="header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -37,7 +65,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-10 col-sm-offset-1 text-center">
+                <div class="col-sm-10 col-sm-offset-1 text-center sign_in_row">
                     <form action="signin_to_db.jsp"
                           method="post"
                           name="sentMessage"
@@ -79,7 +107,7 @@
                                     <button type="submit" class="btn btn-xl">提交</button>
                                 </div>
                                 <div class="col-sm-3 col-sm-offset-2 text-center">
-                                 <button type="reset" class="btn btn-xl">重設</button>
+                                    <button type="reset" class="btn btn-xl">重設</button>
                                 </div>
                             </div>
                         </div>
@@ -88,6 +116,16 @@
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="copyright">Copyright &copy; My Website 2014</span>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -109,6 +147,6 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
-</body>
 
+</body>
 </html>
