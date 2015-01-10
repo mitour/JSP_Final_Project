@@ -70,6 +70,9 @@
                     <a class="page-scroll" href="mailto:love2082020@gmail.com">聯絡我們</a>
                 </li>
                 <%@include file="validation_member_signout.jsp"%>
+                <li>
+                    <a class="page-scroll" href="admin/member_tables.html">管理者頁面</a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -116,15 +119,15 @@
             <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-truck fa-stack-1x fa-inverse"></i>
                     </span>
-                <h3 class="service-heading">保證3天內出貨</h3>
+                <h3 class="service-heading">3天內保證出貨</h3>
                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
             </div>
             <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
                     </span>
                 <h3 class="service-heading">7天內全額退費</h3>
                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
@@ -194,22 +197,17 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="team-member">
-                    <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
-                    <h4>Kay Garland</h4>
-                    <p class="text-muted">Lead Designer</p>
+                    <img src="img/team/member.jpg" class="img-responsive img-circle" alt="">
+                    <h3>張碧涵</h3>
+                    <p class="text-muted">Bi-Han, Zhang</p>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="team-member">
-                    <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
-                    <h4>Larry Parker</h4>
-                    <p class="text-muted">Lead Marketer</p>
+                    <img src="img/team/member.jpg" class="img-responsive img-circle" alt="">
+                    <h3>黃湘瑜</h3>
+                    <p class="text-muted">Xiang-Yu, Huang</p>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
             </div>
         </div>
     </div>

@@ -74,11 +74,11 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    <a href="index.jsp">首頁</a>
-                    <img src="img/arrow_right.png" alt=""/>
-                    <a href="product.jsp">商品</a>
-                    <img src="img/arrow_right.png" alt=""/>
-                    <a href="#">商品詳細</a>
+                    <ol class="breadcrumb">
+                        <li><a href="index.jsp">首頁</a></li>
+                        <li><a href="product.jsp">商品</a></li>
+                        <li class="active">商品詳細</li>
+                    </ol>
                 </h3>
             </div>
             <div class="panel-body">
@@ -108,11 +108,11 @@
                         </div>
                         <div class="product_btn text-right">
                             <p>
-                                <a class="btn btn-xl btn_smail" href="shopping_cart.jsp">
+                                <a class="btn btn_small" href="shopping_cart.jsp">
                                     <span class="glyphicon glyphicon-shopping-cart"></span>
                                     加入購物車
                                 </a>
-                                <a class="btn btn-xl btn_smail" href="">
+                                <a class="bt btn_small" href="checkout.jsp">
                                     前往結帳
                                     <span class="glyphicon glyphicon-chevron-right"></span>
                                 </a>
@@ -139,28 +139,28 @@
                 <div class="col-md-3 col-sm-6 portfolio-item">
                     <div class="portfolio_hover">
                         <a href="product_details.jsp" class="portfolio_hover_img">
-                            <img src="img/portfolio/treehouse-preview.png" class="img-responsive" alt="">
+                            <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption row">
-                            <div class="col-xs-10 col-xs-offset-1">
-                                <h3>Product #1</h3>
-                                <p class="text-muted">Graphic Design</p>
-                                <a href="shopping_cart.jsp" class="btn btn-xl btn_smail">選購</a>
-                            </div>
+                            <h3>Product #1</h3>
+                            <a class="btn btn-xl" href="shopping_cart.jsp">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 portfolio-item">
                     <div class="portfolio_hover">
                         <a href="product_details.jsp" class="portfolio_hover_img">
-                            <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
+                            <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption row">
-                            <div class="col-xs-10 col-xs-offset-1">
-                                <h3>Product #1</h3>
-                                <p class="text-muted">Graphic Design</p>
-                                <a href="shopping_cart.jsp" class="btn btn-xl btn_smail">選購</a>
-                            </div>
+                            <h3>Product #1</h3>
+                            <a class="btn btn-xl" href="shopping_cart.jsp">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -170,11 +170,11 @@
                             <img src="img/portfolio/golden.png" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption row">
-                            <div class="col-xs-10 col-xs-offset-1">
-                                <h3>Product #1</h3>
-                                <p class="text-muted">Graphic Design</p>
-                                <a href="shopping_cart.jsp" class="btn btn-xl btn_smail">選購</a>
-                            </div>
+                            <h3>Product #1</h3>
+                            <a class="btn btn-xl" href="shopping_cart.jsp">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -184,11 +184,11 @@
                             <img src="img/portfolio/escape.png" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption row">
-                            <div class="col-xs-10 col-xs-offset-1">
-                                <h3>Product #1</h3>
-                                <p class="text-muted">Graphic Design</p>
-                                <a href="shopping_cart.jsp" class="btn btn-xl btn_smail">選購</a>
-                            </div>
+                            <h3>Product #1</h3>
+                            <a class="btn btn-xl" href="shopping_cart.jsp">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>

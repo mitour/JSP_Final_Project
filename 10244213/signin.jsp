@@ -117,16 +117,6 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="copyright">Copyright &copy; My Website 2014</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 

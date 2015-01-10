@@ -107,9 +107,9 @@
             </div>
 
             <div class="col-md-4">
-                <h3>Project Description</h3>
+                <h3>最新商品</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-                <h3>Project Details</h3>
+                <h3>其他推薦商品</h3>
                 <ul>
                     <li>Lorem Ipsum</li>
                     <li>Dolor Sit Amet</li>
@@ -132,7 +132,10 @@
                         <div class="portfolio-caption row">
                             <h2>Product #1</h2>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -144,7 +147,10 @@
                         <div class="portfolio-caption row">
                             <h2>Product #1</h2>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -156,7 +162,10 @@
                         <div class="portfolio-caption row">
                             <h2>Product #1</h2>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -168,7 +177,10 @@
                         <div class="portfolio-caption row">
                             <h2>Product #1</h2>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -180,7 +192,10 @@
                         <div class="portfolio-caption row">
                             <h2>Product #1</h2>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -192,7 +207,10 @@
                         <div class="portfolio-caption row">
                             <h2>Product #1</h2>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>

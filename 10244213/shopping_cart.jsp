@@ -76,36 +76,59 @@
                 <h3 class="panel-title">溝物清單</h3>
             </div>
             <div class="panel-body">
-                <div class="table">
-                    <div class="th row">
-                        <div class="td col-xs-1">
-                            <h3>#</h3>
-                        </div>
-                        <div class="td col-sm-4 col-xs-11">
-                            <h3>商品名稱</h3>
-                        </div>
-                        <div class="td col-sm-2 col-xs-3">
-                            <h3>商品規格</h3>
-                        </div>
-                        <div class="td col-sm-2 col-xs-3">
-                            <h3>購買數量</h3>
-                        </div>
-                        <div class="td col-sm-2 col-xs-3">
-                            <h3>商品單價</h3>
-                        </div>
-                        <div class="td col-sm-1 col-xs-3">
-                            <h3>刪除</h3>
-                        </div>
-                    </div>
-                </div>
+                <table class="table table-condensed">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>商品名稱</th>
+                        <th>商品規格</th>
+                        <th>商品單價</th>
+                        <th>購買數量</th>
+                        <th>小計</th>
+                        <th>刪除</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>橘子花</td>
+                        <td>XXX</td>
+                        <td>399</td>
+                        <td>
+                            <select name="quantity" id="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text"/>
+                        </td>
+                        <td>
+                            <i class="fa fa-trash-o"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td>
+                            <h4>訂單總額：</h4>
+                        </td>
+                        <td>
+                            <input type="text"/>
+                        </td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
                 <div class="row">
                     <div class="col-sm-9"></div>
                     <div class="col-sm-3">
-                        <a class="btn btn-xl btn_smail" href="product.jsp">
+                        <a class="btn btn_small" href="product.jsp">
                             <span class="glyphicon glyphicon-chevron-left"></span>
                             繼續選購
                         </a>
-                        <a class="btn btn-xl btn_smail" href="check_out.jsp">
+                        <a class="btn btn_small" href="checkout.jsp">
                             前往結帳
                             <span class="glyphicon glyphicon-chevron-right"></span>
                         </a>
@@ -132,7 +155,10 @@
                         <div class="portfolio-caption row">
                             <h3>Product #1</h3>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -144,7 +170,10 @@
                         <div class="portfolio-caption row">
                             <h3>Product #2</h3>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -156,7 +185,10 @@
                         <div class="portfolio-caption row">
                             <h3>Product #3</h3>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -168,7 +200,10 @@
                         <div class="portfolio-caption row">
                             <h3>Product #4</h3>
                             <p class="text-muted">Graphic Design</p>
-                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">加入購物車</a>
+                            <a href="shopping_cart.jsp" class="btn btn-xl text-left">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                加入購物車
+                            </a>
                         </div>
                     </div>
                 </div>
