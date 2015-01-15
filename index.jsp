@@ -1,4 +1,63 @@
 <%@page pageEncoding="UTF-8"%>
+<%@page import = "java.sql.*" %>
+<%
+    request.setCharacterEncoding ("UTF-8");
+
+    int pid = 0;
+    String product_name = null;
+    String image = null;
+    int unit_cost = 0;
+    String description = null;
+    int inventory = 0;
+    String select_sql = null;
+    PreparedStatement select_prestate = null;
+    ResultSet select_rs = null;
+
+        /*
+         * 載入 JDBC 驅動程式，若找不到 .jar 檔，導入例外事件。
+         */
+    try {
+        Class.forName("com.mysql.jdbc.Driver");
+
+            /*
+             * 與資料庫建立連線，若 SQL 碼錯誤，導入例外事件。
+             */
+        try {
+            String url="jdbc:mysql://localhost?useUnicode=true&characterEncoding=UTF-8";
+            Connection con=DriverManager.getConnection(url,"root","");
+            if (con.isClosed()) {
+                out.println("<script>");
+                out.println("console.log(\"與資料庫建立連線失敗。\");");
+                out.println("</script>");
+            } else {
+                out.println("<script>");
+                out.println("console.log(\"成功與資料庫建立連線。\");");
+                out.println("</script>");
+
+                    /*
+                     * 指定連線的資料庫為 online_store
+                     */
+                con.createStatement().execute("use online_store");
+
+                select_sql = "SELECT * FROM product WHERE product_no BETWEEN ? AND ?";
+                select_prestate = con.prepareStatement(select_sql);
+                select_prestate.setInt(1, 1);
+                select_prestate.setInt(2, 3);
+
+                select_rs = select_prestate.executeQuery();  //執行查詢
+
+            }
+        } catch (SQLException sExec) {
+            out.println("<script>");
+            out.println("console.log(\"SQL錯誤!"+ sExec.toString()+"\");");
+            out.println("</script>");
+        }
+    }catch (ClassNotFoundException err) {
+        out.println("<script>");
+        out.println("console.log(\"Can't found class。"+ err.toString()+"\");");
+        out.println("</script>");
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +91,63 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+        .intro-heading, .intro-lead-in {
+            text-shadow :3px 3px 3px #777;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .portfolio_img {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .portfolio_img img {
+            position: absolute;
+            margin: auto;
+            width: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        #portfolio .portfolio-item .portfolio-caption {
+            padding: 25px;
+        }
+
+        #portfolio .portfolio-item .portfolio-caption p {
+            padding-bottom: 0;
+            height: 45px;
+            overflow: hidden;
+        }
+
+        #portfolio .portfolio-item .portfolio_btn {
+            padding: 0;
+            padding-bottom: 2em;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .portfolio_img {
+                height: 340px;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .intro-heading > br {
+                display: none;
+            }
+            .intro-heading > small {
+                font-size: 100%;
+            }
+        }
+    </style>
 
 </head>
 
@@ -84,8 +200,8 @@
 <header>
     <div class="container">
         <div class="intro-text">
-            <div class="intro-lead-in">Welcome To Our Studio!</div>
-            <div class="intro-heading">It's Nice To Meet You</div>
+            <div class="intro-lead-in">歡迎來到橘。花台！</div>
+            <div class="intro-heading"><small>全世界最大的</small><br/>植栽販售平台</div>
             <a href="#services" class="page-scroll btn btn-xl">了解詳請</a>
         </div>
     </div>
@@ -146,40 +262,44 @@
             </div>
         </div>
         <div class="row">
+            <%
+                while(select_rs.next()){
+                    out.println("<script>");
+                    out.println("console.log(\"成功抓取資料。\");");
+                    out.println("</script>");
+
+                    pid = select_rs.getInt("product_no");
+                    product_name = select_rs.getString("product_name");
+                    image = select_rs.getString("image");
+                    unit_cost = select_rs.getInt("unit_cost");
+                    description = select_rs.getString("description");
+                    inventory = select_rs.getInt("inventory");
+            %>
             <div class="col-md-4 col-sm-6 portfolio-item">
                 <div class="portfolio_hover">
-                    <a href="product_details.jsp" class="portfolio_hover_img">
-                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
-                    </a>
+                    <div class="portfolio_img">
+                        <a href="product_details.jsp" class="portfolio_hover_img">
+                            <img src="<%=image%>" alt="<%=product_name%>">
+                        </a>
+                    </div>
                     <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4><%=product_name%></h4>
+                        <p class="text-muted"><%=description%></p>
+                    </div>
+                    <div class="portfolio-caption portfolio_btn">
+                        <a href="shopping_cart.jsp" class="btn btn-xl text-left">
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
+                            加入購物車
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 portfolio-item">
-                <div class="portfolio_hover">
-                    <a href="product_details.jsp" class="portfolio_hover_img">
-                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 portfolio-item">
-                <div class="portfolio_hover">
-                    <a href="product_details.jsp" class="portfolio_hover_img">
-                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-            </div>
-            <div class = "text-center">
+            <%
+                }
+            %>
+        </div>
+        <div class="row clearfix">
+            <div class= "text-center col-xs-12">
                 <a href="product.jsp" class="btn btn-xl">看不夠嗎？</a>
             </div>
         </div>

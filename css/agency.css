@@ -264,7 +264,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../img/header-bg.jpg);
+    background-image: url(../img/header-bg4.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -340,7 +340,7 @@ section h3.section-subheading {
 
 @media(min-width:768px) {
     section {
-        padding: 150px 0;
+        padding: 50px 0;
     }
 }
 
@@ -349,10 +349,10 @@ section h3.section-subheading {
     text-transform: none;
 }
 
-#portfolio .portfolio-item {
-    right: 0;
-    margin: 0 0 15px;
-}
+/*#portfolio .portfolio-item {*/
+    /*right: 0;*/
+    /*margin: 0 0 15px;*/
+/*}*/
 
 #portfolio .portfolio-item .portfolio-link {
     display: block;
@@ -399,7 +399,7 @@ section h3.section-subheading {
 #portfolio .portfolio-item .portfolio-caption {
     margin: 0 auto;
     padding: 25px;
-    max-width: 400px;
+    /*max-width: 400px;*/
     text-align: center;
     background-color: #fff;
 }
@@ -650,68 +650,75 @@ aside.clients img {
     margin: 50px auto;
 }
 
-section#signup {
-    background-color: #222;
-    background-image: url(../img/map-image.png);
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-section#signup .section-heading {
+section#signup .section-heading,
+section#signin .section-heading {
     color: #fed136;
 }
 
-section#signup .form-group {
+section#signup .form-group,
+section#signup .form-control,
+section#signin .form-group,
+section#signin .form-control {
     margin-bottom: 25px;
 }
 
 section#signup .form-group input,
-section#signup .form-group textarea {
+section#signup .form-group textarea,
+section#signin .form-group input,
+section#signin .form-group textarea {
     padding: 20px;
 }
 
-section#signup .form-group input.form-control {
+section#signup .form-group input.form-control,
+section#signin .form-group input.form-control {
     height: auto;
 }
 
-section#signup .form-group textarea.form-control {
+section#signup .form-group textarea.form-control,
+section#signin .form-group textarea.form-contro {
     height: 236px;
 }
 
-section#signup .form-control:focus {
+section#signup .form-control:focus,
+section#signin .form-control:focus {
     border-color: #fed136;
     box-shadow: none;
 }
 
-section#signup::-webkit-input-placeholder {
+section#signup::-webkit-input-placeholder,
+section#signin::-webkit-input-placeholder {
     text-transform: uppercase;
     font-family: "Microsoft JhengHei", Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#signup:-moz-placeholder {
+section#signup:-moz-placeholder,
+section#signin:-moz-placeholder {
     text-transform: uppercase;
     font-family: "Microsoft JhengHei", Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#signup::-moz-placeholder {
+section#signup::-moz-placeholder,
+section#signin::-moz-placeholder {
     text-transform: uppercase;
     font-family: "Microsoft JhengHei", Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#signup:-ms-input-placeholder {
+section#signup:-ms-input-placeholder,
+section#signin:-ms-input-placeholder {
     text-transform: uppercase;
     font-family: "Microsoft JhengHei", Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#signup .text-danger {
+section#signup .text-danger,
+section#signin .text-danger {
     color: #e74c3c;
 }
 

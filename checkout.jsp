@@ -33,6 +33,13 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        .donation_field,
+        .not_donation_field {
+            display: none;
+        }
+    </style>
+
 </head>
 
 <body id="page-top" class="index checkout">
@@ -182,32 +189,30 @@
                                     捐贈發票
                                 </h4>
                             </div>
-                            <div class="panel-body">
-                                <fieldset id="donation_field" disabled>
-                                    <p>
-                                        <input type="radio"
-                                               id="unit"
-                                               name="donation"
-                                               value="unit">
-                                        <label for="unit">捐贈單位：</label>
-                                        <select name="unit_select" id="unit_select">
-                                            <option selected value="dog">社團法人中華民國動物福利環保協進會</option>
-                                            <option value="ccf">財團法人台灣兒童暨家庭扶助基金會</option>
-                                            <option value="guidedog">社團法人台灣導盲犬協會</option>
-                                        </select>
-                                    </p>
-                                    <p>
-                                        <input type="radio"
-                                               id="society"
-                                               name="donation"
-                                               value="society">
-                                        <label for="society">其他社福團體愛心碼：</label>
-                                        <input type="text"/>
-                                        <a href="https://www.einvoice.nat.gov.tw/APMEMBERVAN/XcaOrgPreserveCodeQuery/XcaOrgPreserveCodeQuery?CSRT=4350550699150711492">
-                                            愛心碼索引
-                                        </a>
-                                    </p>
-                                </fieldset>
+                            <div id="donation_field" class="donation_field panel-body" disabled>
+                                <p>
+                                    <input type="radio"
+                                           id="unit"
+                                           name="donation"
+                                           value="unit">
+                                    <label for="unit">捐贈單位：</label>
+                                    <select name="unit_select" id="unit_select">
+                                        <option selected value="dog">社團法人中華民國動物福利環保協進會</option>
+                                        <option value="ccf">財團法人台灣兒童暨家庭扶助基金會</option>
+                                        <option value="guidedog">社團法人台灣導盲犬協會</option>
+                                    </select>
+                                </p>
+                                <p>
+                                    <input type="radio"
+                                           id="society"
+                                           name="donation"
+                                           value="society">
+                                    <label for="society">其他社福團體愛心碼：</label>
+                                    <input type="text"/>
+                                    <a href="https://www.einvoice.nat.gov.tw/APMEMBERVAN/XcaOrgPreserveCodeQuery/XcaOrgPreserveCodeQuery?CSRT=4350550699150711492">
+                                        愛心碼索引
+                                    </a>
+                                </p>
                             </div>
                         </div>
                         <div class="panel panel-default">
@@ -216,75 +221,73 @@
                                     電子發票
                                 </h4>
                             </div>
-                            <div class="panel-body">
-                                <fieldset id="not_donation_field" disabled>
-                                    <span>
-                                        依統一發票使用辦法規定：個人戶(二聯式)發票一經開立，無法任意更改或改開公司戶(三聯式)發票。
-                                    </span>
+                            <div id="not_donation_field" class="not_donation_field panel-body" disabled>
+                                <span>
+                                    依統一發票使用辦法規定：個人戶(二聯式)發票一經開立，無法任意更改或改開公司戶(三聯式)發票。
+                                </span>
+                                <p>
+                                    <input type="radio"
+                                           id="member"
+                                           name="not_donation"
+                                           value="unit">
+                                    <label for="member">會員載具：</label>
+                                    <small>讓我們自動為您兌獎，中獎後主動通知您。</small>
+                                    <ul>
+                                        <li>
+                                            <div class="form-group">
+                                                <label for="name">姓名：</label>
+                                                <input type="text"
+                                                       placeholder="姓名 *"
+                                                       id="name"
+                                                       name="name">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group">
+                                                <label for="phone">手機：</label>
+                                                <input type="tel"
+                                                       placeholder="手機 *"
+                                                       id="phone"
+                                                       name="phone"
+                                                       pattern="[09]{2}[0-9]{8}">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group">
+                                                <label for="address">住址：</label>
+                                                <input type="text"
+                                                       placeholder="住址 *"
+                                                       id="address"
+                                                       name="address">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    <input type="radio"
+                                           id="mobile"
+                                           name="not_donation"
+                                           value="mobile">
+                                    <label for="mobile">共通性載具：</label>
+                                    <small>
+                                        您需持有手機載具，詳見財政部
+                                        <a href="https://www.einvoice.nat.gov.tw/">
+                                            「電子發票整合服務平台」
+                                        </a>
+                                    </small>
+                                </p>
+                                <p>
+                                    <input type="radio"
+                                           id="triplicate"
+                                           name="not_donation"
+                                           value="triplicate">
+                                    <label for="triplicate">三聯式發票：</label>
+                                </p>
+                                <blockquote>
                                     <p>
-                                        <input type="radio"
-                                               id="member"
-                                               name="not_donation"
-                                               value="unit">
-                                        <label for="member">會員載具：</label>
-                                        <small>讓我們自動為您兌獎，中獎後主動通知您。</small>
-                                        <ul>
-                                            <li>
-                                                <div class="form-group">
-                                                    <label for="name">姓名：</label>
-                                                    <input type="text"
-                                                           placeholder="姓名 *"
-                                                           id="name"
-                                                           name="name">
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-group">
-                                                    <label for="phone">手機：</label>
-                                                    <input type="tel"
-                                                           placeholder="手機 *"
-                                                           id="phone"
-                                                           name="phone"
-                                                           pattern="[09]{2}[0-9]{8}">
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="form-group">
-                                                    <label for="address">住址：</label>
-                                                    <input type="text"
-                                                           placeholder="住址 *"
-                                                           id="address"
-                                                           name="address">
-                                                </div>
-                                            </li>
-                                        </ul>
+                                        發票一經開立，統一編號、抬頭以及收件相關資訊無法再做更動，也無法再將二聯式發票改開三聯式發票，請務必確認資訊正確。
                                     </p>
-                                    <p>
-                                        <input type="radio"
-                                               id="mobile"
-                                               name="not_donation"
-                                               value="mobile">
-                                        <label for="mobile">共通性載具：</label>
-                                        <small>
-                                            您需持有手機載具，詳見財政部
-                                            <a href="https://www.einvoice.nat.gov.tw/">
-                                                「電子發票整合服務平台」
-                                            </a>
-                                        </small>
-                                    </p>
-                                    <p>
-                                        <input type="radio"
-                                               id="triplicate"
-                                               name="not_donation"
-                                               value="triplicate">
-                                        <label for="triplicate">三聯式發票：</label>
-                                    </p>
-                                    <blockquote>
-                                        <p>
-                                            發票一經開立，統一編號、抬頭以及收件相關資訊無法再做更動，也無法再將二聯式發票改開三聯式發票，請務必確認資訊正確。
-                                        </p>
-                                    </blockquote>
-                                </fieldset>
+                                </blockquote>
                             </div>
                         </div>
                         <div class="product_btn text-right">
@@ -336,9 +339,13 @@
 
     <script>
         recipe.onchange = function () {
-        var val = this.options[this.selectedIndex].value;
-        document.getElementById("donation_field").disabled = (val === "donation") ? false : true;
-        document.getElementById("not_donation_field").disabled = (val === "not_donation") ? false : true;
+            var val = this.options[this.selectedIndex].value;
+            var donation = document.getElementById("donation_field");
+            var recipe  = document.getElementById("not_donation_field");
+            donation.style.display = (val === "donation") ? "block" : "none";
+            recipe.style.display = (val === "not_donation") ? "block" : "none";
+            donation.disabled = (val === "donation") ? false : true;
+            recipe.disabled = (val === "not_donation") ? false : true;
         };
     </script>
 </body>
