@@ -59,6 +59,7 @@
                             out.println("console.log(\"登入成功。\");");
                             out.println("</script>");
 
+                            session.setAttribute("user_id",select_rs.getInt("member_no"));
                             session.setAttribute("user",select_rs.getString("member_name"));
                             response.sendRedirect("index.jsp");
                         } else {

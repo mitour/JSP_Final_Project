@@ -115,7 +115,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>橘。花台</title>
+    <title>購物清單</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -289,7 +289,7 @@
                 <h3 class="panel-title">溝物清單</h3>
             </div>
             <div class="panel-body">
-                <form action="checkout.jsp">
+                <form action="checkout.jsp" method="post">
                     <table id="shoppinglist" class="table table-condensed">
                         <thead>
                             <tr>
@@ -314,10 +314,10 @@
                                 <td><%=pid%></td>
                                 <td><%=product_name%></td>
                                 <td>
-                                    <input class="price" type="number" readonly value="<%=unit_cost%>"/>
+                                    <input type="number" name="<%=pid%>_unit_cost" class="price" value="<%=unit_cost%>" readonly/>
                                 </td>
                                 <td>
-                                    <select name="<%=pid%>_quantity" id="<%=pid%>_quantity" onchange="autoCal(this)">
+                                    <select id="<%=pid%>_quantity" name="<%=pid%>_quantity" onchange="autoCal(this)">
                                         <%
                                             if (inventory > 5) {
                                                 int temp = 1;
@@ -336,11 +336,11 @@
                                     </select>
                                 </td>
                                 <td>
-                                    <input class="price" type="number" readonly value="<%=unit_cost%>"/>
+                                    <input type="number" name="subtotal" class="price" value="<%=unit_cost%>" readonly/>
                                 </td>
                                 <td>
                                     <div id="delete_icon">
-                                        <a class="fa fa-trash-o" type="button" value="Delete" onclick="deleteItem('<%=pid%>')"></a>
+                                        <a type="button" class="fa fa-trash-o" value="Delete" onclick="deleteItem('<%=pid%>')"></a>
                                     </div>
                                 </td>
                             </tr>
@@ -361,14 +361,14 @@
                                 <td></td>
                                 <td>
                                     <select name="delivery" id="delivery" onchange="autoCal(this)" required>
-                                        <option value="null" disabled>請選擇運送方式</option>
+                                        <option value="" >請選擇運送方式</option>
                                         <option value="711">超商取貨 $50</option>
                                         <option value="post">郵寄 $100</option>
                                         <option value="blackcat">宅配到府 $180</option>
                                     </select>
                                 </td>
                                 <td>
-                                    <input class="price" type="number" readonly/>
+                                    <input type="number" name="subtotal_delivery" class="price" readonly/>
                                 </td>
                                 <td></td>
                             </tr>
@@ -378,7 +378,7 @@
                                 <td></td>
                                 <td>總價：</td>
                                 <td>
-                                    <input class="price" type="number" readonly/>
+                                    <input type="number" name="totalprice" class="price" readonly/>
                                 </td>
                                 <td></td>
                             </tr>
@@ -434,10 +434,10 @@
                             <div class="portfolio-caption">
                                 <h2><%=product_name%></h2>
                                 <p class="text-muted"><%=description%></p>
-                                <a href="shopping_cart.jsp" class="btn btn-xl text-left">
-                                    <span class="glyphicon glyphicon-shopping-cart"></span>
-                                    加入購物車
-                                </a>
+                                <%--<a href="shopping_cart.jsp" class="btn btn-xl text-left">--%>
+                                    <%--<span class="glyphicon glyphicon-shopping-cart"></span>--%>
+                                    <%--加入購物車--%>
+                                <%--</a>--%>
                             </div>
                         </div>
                     </div>

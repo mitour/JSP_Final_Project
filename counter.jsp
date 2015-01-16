@@ -40,7 +40,5 @@
 
         Integer tcounter = (Integer)application.getAttribute("counter");
     %>
-
-    您是第<%=tcounter%>位訪客!
 </body>
 </html>

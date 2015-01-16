@@ -7,7 +7,7 @@
         out.println("</a>");
         out.println("</li>");
         out.println("<li>");
-        out.println("<a class=\"page-scroll\" href=\"member.jsp\">會員資料</a>");
+        out.println("<a class=\"page-scroll\" href=\"shopping_cart.jsp\">購物車</a>");
         out.println("</li>");
     }
 %>

@@ -4,17 +4,15 @@
 <%
     request.setCharacterEncoding ("UTF-8");
 
-    int pid = 0;
-    String product_name = null;
-    String image = null;
-    int unit_cost = 0;
-    String description = null;
-    int inventory = 0;
-    String select_sql = null;
+    String            pid             = request.getParameter("pid");
+    String            product_name    = null;
+    String            image           = null;
+    int               unit_cost       = 0;
+    String            description     = null;
+    int               inventory       = 0;
+    String            select_sql      = null;
     PreparedStatement select_prestate = null;
-    ResultSet select_rs = null;
-    Random ran = new Random();
-    int random;
+    ResultSet         select_rs       = null;
 
         /*
          * 載入 JDBC 驅動程式，若找不到 .jar 檔，導入例外事件。
@@ -42,12 +40,9 @@
                      */
                 con.createStatement().execute("use online_store");
 
-                random = ran.nextInt(2)+1;
-
-                select_sql = "SELECT * FROM product WHERE product_no BETWEEN ? AND ?";
+                select_sql = "SELECT * FROM product WHERE product_no = ?";
                 select_prestate = con.prepareStatement(select_sql);
-                select_prestate.setInt(1, random);
-                select_prestate.setInt(2, random+3);
+                select_prestate.setString(1, pid);
 
                 select_rs = select_prestate.executeQuery();  //執行查詢
 
@@ -74,7 +69,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>橘。花台</title>
+    <title>商品詳細資訊</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -98,11 +93,46 @@
     <![endif]-->
 
     <style>
-        .portfolio_img {
-            position: relative;
-            height: 200px;
-            text-align: center;
-            overflow: hidden;
+        #shoppingcart:hover {
+            right: -10px;
+        }
+
+        #shoppingcart {
+            display: none;
+            position: fixed;
+            top: 80%;
+            right: -105px;
+            background-color: #000;
+            padding: 20px 20px;
+            color: #fff;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            -moz-border-top-left-radius: 10px;
+            -moz-border-bottom-left-radius: 10px;
+            -webkit-border-top-left-radius: 10px;
+            -webkit-border-bottom-left-radius: 10px;
+        }
+
+        #shoppingcart a:hover {
+            color: #fed136;
+            text-decoration: none;
+        }
+
+        #shoppingcart a {
+            color: #fff;
+        }
+
+        #shoppingcart > #cartContent {
+            padding-right: 10px;
+        }
+
+        .product_details {
+            min-height: 600px;
+        }
+
+        .product_details p,
+        .product_details h3 {
+            padding: 20px 0;
         }
 
         .product_img {
@@ -113,7 +143,6 @@
             border-radius: 5px;
         }
 
-        .portfolio_img img,
         .product_img img {
             position: absolute;
             width: 100%;
@@ -122,16 +151,6 @@
             right: 0;
             bottom: 0;
             left: 0;
-        }
-
-        #portfolio .portfolio-item .portfolio-caption {
-            padding: 15px;
-        }
-
-        #portfolio .portfolio-item .portfolio-caption p {
-            font-size: 18px;
-            height: 80px;
-            overflow: hidden;
         }
 
         @media screen and (max-width: 1200px) and (min-width: 992px) {
@@ -151,17 +170,73 @@
                 margin-top: 0;
             }
         }
+    </style>
 
-        @media screen and (max-width: 768px) {
-            .portfolio_img {
-                height: 339px;
+    <script type="application/javascript">
+        function setCart(pid) {
+            if (getCartInfo() != null) {
+                var rawCartContent = getCartInfo().split("_");
+                rawCartContent.push(pid);
+                var uniqueCartContent = uniqarray(rawCartContent);
+                var cartContent = uniqueCartContent[0];
+                for (var i = 1; i < uniqueCartContent.length; i++) {
+                    cartContent += "_" + uniqueCartContent[i];
+                }
+                var expDays = new Date();
+                expDays.setTime(expDays.getTime() + 7 * 24 * 60 * 60 * 1000);
+                document.cookie = "cart = " + cartContent + "; expires = " + expDays.toGMTString();
+            } else {
+                var expDays = new Date();
+                expDays.setTime(expDays.getTime() + 7 * 24 * 60 * 60 * 1000);
+                document.cookie = "cart = " + escape(pid) + "; expires = " + expDays.toGMTString();
+            }
+            checkCart();
+        }
+        function getCartInfo() {
+            var arr = document.cookie.match(new RegExp("(^| )cart=([^;]*)(;|$)"));
+            if (arr != null) {
+                return unescape(arr[2]);
+            } else {
+                return null;
             }
         }
-    </style>
+        function eraseCookie() {
+            var expDays = new Date();
+            expDays.setTime(expDays.getTime() + -1 * 24 * 60 * 60 * 1000);
+            document.cookie = "cart = ''; expires = " + expDays.toGMTString();
+            var shoppingcart = document.getElementById("shoppingcart");
+            shoppingcart.style.display = "none";
+        }
+        function checkCart() {
+            if (getCartInfo() != null) {
+                var shoppingcart = document.getElementById("shoppingcart");
+                shoppingcart.style.display = "block";
+                var cartContent = getCartInfo().split("_");
+                var cartQuantity = cartContent.length;
+                var cartTitle = document.getElementById("cartContent");
+                cartTitle.innerHTML = "購物車 (" + cartQuantity + ")";
+            }
+        }
+        function uniqarray(a) {
+            var seen = {};
+            var output = [];
+            var len = a.length;
+            var j = 0;
+            for (var i = 0; i < len; i++) {
+                var item = a[i];
+                if (seen[item] !== 1) {
+                    seen[item] = 1;
+                    output[j++] = item;
+                }
+            }
+            output.sort();
+            return output;
+        }
+    </script>
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index" onload="checkCart()">
 
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top product_page">
@@ -210,17 +285,16 @@
             <div class="panel-body">
                 <div class="row">
                     <%
-//                        if(select_rs.next()){
-//                            out.println("<script>");
-//                            out.println("console.log(\"成功抓取資料。\");");
-//                            out.println("</script>");
-//
-//                            pid = select_rs.getInt("product_no");
-//                            product_name = select_rs.getString("product_name");
-//                            image = select_rs.getString("image");
-//                            unit_cost = select_rs.getInt("unit_cost");
-//                            description = select_rs.getString("description");
-//                            inventory = select_rs.getInt("inventory");
+                        if(select_rs.next()){
+                            out.println("<script>");
+                            out.println("console.log(\"成功抓取資料。\");");
+                            out.println("</script>");
+
+                            product_name = select_rs.getString("product_name");
+                            image = select_rs.getString("image");
+                            unit_cost = select_rs.getInt("unit_cost");
+                            description = select_rs.getString("description");
+                            inventory = select_rs.getInt("inventory");
                     %>
                     <div class="col-sm-5">
                         <div class="product_img">
@@ -228,47 +302,59 @@
                         </div>
                     </div>
                     <div class="col-sm-7">
-                        <h1><%=product_name%></h1>
-                        <div class="product_info">
-                            <p>iLorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo nventore harum ex magni, dicta impedit.</p>
-                            <h3>商品規格：</h3>
-                            <h3>單價：<%=unit_cost%></h3>
-                            <h3>庫存量：<%=inventory%></h3>
-                            <h3>購買數量：
-                                <select name="quantity" id="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </h3>
-                            <h3>優惠活動：</h3>
-                            <h3>付款方式：</h3>
-                            <h3>運送方式：</h3>
-                        </div>
-                        <div class="product_btn text-right">
-                            <p>
-                                <a class="btn btn_small" href="shopping_cart.jsp">
-                                    <span class="glyphicon glyphicon-shopping-cart"></span>
-                                    加入購物車
-                                </a>
-                                <a class="bt btn_small" href="checkout.jsp">
-                                    前往結帳
-                                    <span class="glyphicon glyphicon-chevron-right"></span>
-                                </a>
-                            </p>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-title product_note">注意事項：</div>
+                        <div class="product_details">
+                            <h1><%=product_name%></h1>
+                            <div class="product_info">
+                                <p><%=description%></p>
+                                <h3>單價：<%=unit_cost%></h3>
+                                <h3>庫存量：<%=inventory%></h3>
+                                <h3>
+                                    運送方式：
+                                    <div class="btn-group">
+                                        <span class="label label-info">超商取貨</span>
+                                        <span class="label label-info">郵寄</span>
+                                        <span class="label label-info">黑貓宅配</span>
+                                    </div>
+                                </h3>
+                            </div>
+                            <div class="product_btn text-right">
+                                <p>
+                                    <a class="btn btn_small" onclick="setCart(<%=pid%>)">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                        加入購物車
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-title product_note">注意事項：
+                                    <ul>
+                                        <li>
+                                            貨品出售後 3 日內可全額退貨，7 日內僅能換貨。
+                                        </li>
+                                        <li>
+                                            但因貨品有非人為損壞、商品不全等，7 日內皆可全額退貨。
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <%--<%--%>
-                        <%--}--%>
-                    <%--%>--%>
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Shopping Cart -->
+<div id="shoppingcart">
+    <span id="cartContent" class="text-center title">購物車</span>
+    <a target="_blank" href="shopping_cart.jsp">結帳</a>
+    <a id="clearCart" href="" onclick="eraseCookie()">清空</a>
+</div>
+<!-- /.Shopping Cart -->
 
 <%--<!-- Portfolio Grid Section -->--%>
 <%--<section id="portfolio" class="bg-light-gray">--%>

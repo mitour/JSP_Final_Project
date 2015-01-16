@@ -3,15 +3,15 @@
 <%
     request.setCharacterEncoding ("UTF-8");
 
-    int pid = 0;
-    String product_name = null;
-    String image = null;
-    int unit_cost = 0;
-    String description = null;
-    int inventory = 0;
-    String select_sql = null;
+    int               pid             = 0;
+    String            product_name    = null;
+    String            image           = null;
+    int               unit_cost       = 0;
+    String            description     = null;
+    int               inventory       = 0;
+    String            select_sql      = null;
     PreparedStatement select_prestate = null;
-    ResultSet select_rs = null;
+    ResultSet         select_rs       = null;
 
         /*
          * 載入 JDBC 驅動程式，若找不到 .jar 檔，導入例外事件。
@@ -67,7 +67,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>橘。花台</title>
+    <title>商品總覽</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -98,14 +98,18 @@
         #shoppingcart {
             display: none;
             position: fixed;
+            z-index: 99999;
             top: 80%;
             right: -105px;
             background-color: #000;
             padding: 20px 20px;
             color: #fff;
-            border-radius: 10px;
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            -moz-border-top-left-radius: 10px;
+            -moz-border-bottom-left-radius: 10px;
+            -webkit-border-top-left-radius: 10px;
+            -webkit-border-bottom-left-radius: 10px;
         }
 
         #shoppingcart a:hover {
@@ -309,14 +313,14 @@
             </div>
 
             <div class="col-md-4">
-                <h3>最新商品</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+                <h3>最新商品簡介</h3>
+                <p>白遠集重不業友太許劇：部心心飛想黨聯親時親應別眼不、最林分快？也當告兒持有以另準美易屋時園有那的並賽多東的國我成樂民。響度資年怕作：關中望對不程響智共趣受空可著此果溫委中謝我為不山十園不的這好要一修簡散。職唱必不；國爸王要一訴能開言不光！</p>
                 <h3>其他推薦商品</h3>
                 <ul>
-                    <li>Lorem Ipsum</li>
-                    <li>Dolor Sit Amet</li>
-                    <li>Consectetur</li>
-                    <li>Adipiscing Elit</li>
+                    <li>橘子花</li>
+                    <li>太陽花</li>
+                    <li>柚子花</li>
+                    <li>菊花</li>
                 </ul>
             </div>
         </div>
@@ -332,18 +336,16 @@
                         out.println("console.log(\"成功抓取資料。\");");
                         out.println("</script>");
 
-                        pid = select_rs.getInt("product_no");
+                        pid          = select_rs.getInt("product_no");
                         product_name = select_rs.getString("product_name");
-                        image = select_rs.getString("image");
-                        unit_cost = select_rs.getInt("unit_cost");
-                        description = select_rs.getString("description");
-                        inventory = select_rs.getInt("inventory");
+                        image        = select_rs.getString("image");
+                        description  = select_rs.getString("description");
                 %>
                 <div class="col-md-3 col-sm-6 col-xs-10 col-sm-offset-0 col-xs-offset-1 portfolio-item">
                     <div class="portfolio_hover">
                         <div class="portfolio_img">
-                            <a href="product_details.jsp?product_no=1" class="portfolio_hover_img">
-                                <img src="<%=image%>" alt="">
+                            <a href="product_details.jsp?pid=<%=pid%>" class="portfolio_hover_img">
+                                <img src="<%=image%>" alt="<%=product_name%>">
                             </a>
                         </div>
                         <div class="portfolio-caption">

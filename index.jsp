@@ -1,17 +1,17 @@
 <%@page pageEncoding="UTF-8"%>
 <%@page import = "java.sql.*" %>
 <%
-    request.setCharacterEncoding ("UTF-8");
+    request.setCharacterEncoding("UTF-8");
 
-    int pid = 0;
-    String product_name = null;
-    String image = null;
-    int unit_cost = 0;
-    String description = null;
-    int inventory = 0;
-    String select_sql = null;
+    int               pid             = 0;
+    String            product_name    = null;
+    String            image           = null;
+    int               unit_cost       = 0;
+    String            description     = null;
+    int               inventory       = 0;
+    String            select_sql      = null;
     PreparedStatement select_prestate = null;
-    ResultSet select_rs = null;
+    ResultSet         select_rs       = null;
 
         /*
          * 載入 JDBC 驅動程式，若找不到 .jar 檔，導入例外事件。
@@ -93,6 +93,31 @@
     <![endif]-->
 
     <style>
+        #counter:hover {
+            right: -5px;
+        }
+
+        #counter {
+            /*display: none;*/
+            position: fixed;
+            z-index: 99999;
+            top: 80%;
+            right: -160px;
+            background-color: #000;
+            padding: 15px;
+            color: #fff;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            -moz-border-top-left-radius: 10px;
+            -moz-border-bottom-left-radius: 10px;
+            -webkit-border-top-left-radius: 10px;
+            -webkit-border-bottom-left-radius: 10px;
+        }
+
+        #counter span {
+            margin-left: 10px;
+        }
+
         .intro-heading, .intro-lead-in {
             text-shadow :3px 3px 3px #777;
         }
@@ -186,9 +211,9 @@
                     <a class="page-scroll" href="mailto:love2082020@gmail.com">聯絡我們</a>
                 </li>
                 <%@include file="validation_member_signout.jsp"%>
-                <li>
-                    <a class="page-scroll" href="admin/member_tables.html">管理者頁面</a>
-                </li>
+                <%--<li>--%>
+                    <%--<a class="page-scroll" href="admin/member_tables.html">管理者頁面</a>--%>
+                <%--</li>--%>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -207,13 +232,6 @@
     </div>
 </header>
 
-<section id="counter">
-    <div class="container">
-        <div class="row">
-
-        </div>
-    </div>
-</section>
 <!-- Services Section -->
 <section id="services">
     <div class="container">
@@ -230,7 +248,7 @@
                         <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
                     </span>
                 <h3 class="service-heading">線上購物</h3>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">白遠集重不業友太許劇：部心心飛想黨聯親時親應別眼不、最林分快？也當告兒持有以另準美易屋時園有那的並賽多東的國我成樂民。</p>
             </div>
             <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -238,7 +256,7 @@
                         <i class="fa fa-truck fa-stack-1x fa-inverse"></i>
                     </span>
                 <h3 class="service-heading">3天內保證出貨</h3>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">響度資年怕作：關中望對不程響智共趣受空可著此果溫委中謝我為不山十園不的這好要一修簡散。職唱必不；國爸王要一訴能開言不光！</p>
             </div>
             <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -246,7 +264,7 @@
                         <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
                     </span>
                 <h3 class="service-heading">7天內全額退費</h3>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">的我年要，維河大們在，她覺線團況會首態同地有演那以，口史滿勢向快大他改兩如重底想毛有發、用除無常的子展，靜政及開你才於油言各非，這並海……臺的陸風外。</p>
             </div>
         </div>
     </div>
@@ -258,7 +276,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">推薦商品</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h3 class="section-subheading text-muted">真心推薦，保證不騙，真的。</h3>
             </div>
         </div>
         <div class="row">
@@ -268,17 +286,15 @@
                     out.println("console.log(\"成功抓取資料。\");");
                     out.println("</script>");
 
-                    pid = select_rs.getInt("product_no");
+                    pid          = select_rs.getInt("product_no");
                     product_name = select_rs.getString("product_name");
-                    image = select_rs.getString("image");
-                    unit_cost = select_rs.getInt("unit_cost");
-                    description = select_rs.getString("description");
-                    inventory = select_rs.getInt("inventory");
+                    image        = select_rs.getString("image");
+                    description  = select_rs.getString("description");
             %>
             <div class="col-md-4 col-sm-6 portfolio-item">
                 <div class="portfolio_hover">
                     <div class="portfolio_img">
-                        <a href="product_details.jsp" class="portfolio_hover_img">
+                        <a href="product_details.jsp?pid=<%=pid%>" class="portfolio_hover_img">
                             <img src="<%=image%>" alt="<%=product_name%>">
                         </a>
                     </div>
@@ -286,12 +302,12 @@
                         <h4><%=product_name%></h4>
                         <p class="text-muted"><%=description%></p>
                     </div>
-                    <div class="portfolio-caption portfolio_btn">
-                        <a href="shopping_cart.jsp" class="btn btn-xl text-left">
-                            <span class="glyphicon glyphicon-shopping-cart"></span>
-                            加入購物車
-                        </a>
-                    </div>
+                    <%--<div class="portfolio-caption portfolio_btn">--%>
+                        <%--<a href="shopping_cart.jsp" class="btn btn-xl text-left">--%>
+                            <%--<span class="glyphicon glyphicon-shopping-cart"></span>--%>
+                            <%--加入購物車--%>
+                        <%--</a>--%>
+                    <%--</div>--%>
                 </div>
             </div>
             <%
@@ -332,6 +348,14 @@
         </div>
     </div>
 </section>
+
+<!-- counter -->
+<%@include file="counter.jsp"%>
+<div id="counter">
+    <span class="glyphicon glyphicon-thumbs-up"></span>
+    <span class="text-center title">您是第<%=tcounter%>位顧客</span>
+</div>
+<!-- /.counter -->
 
 <footer>
     <div class="container">
